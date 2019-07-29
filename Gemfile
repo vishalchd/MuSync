@@ -95,7 +95,7 @@ gem 'ckeditor'
 
 gem 'rateyo-rails'
 
-
+gem 'rails_12factor', group: :production
 
 
 
