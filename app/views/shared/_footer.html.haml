@@ -1,0 +1,7 @@
+%footer.footer.text-center
+  &copy; #{Time.now.year} MuSync.com
+#ctrl{'data-name': params[:controller]}
+- if flash.any?
+  #notifications
+    :javascript
+      #{show_notifications.html_safe}

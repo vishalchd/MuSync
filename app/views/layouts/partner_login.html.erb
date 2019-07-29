@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MuSync- Admin Login</title>
+    <link rel="shortcut icon" type="image/png" href="/static/img/favicon.png" />
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/static/css/owl.carousel.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
+    <link href="/static/css/how-it-works.css" rel="stylesheet">
+    <link href="/static/css/partner-login.css" rel="stylesheet">
+    <link href="/static/css/responsive.css" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%#= stylesheet_link_tag 'noty/lib/noty' %>
+  </head>
+
+  <body class="partner-login-body">
+    <div class="header-area fixed">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="col-md-7 col-md-offset-2 how-it-works-header">
+              <div class="logo">
+                <a href="/">
+                  <img  alt="MuSync">
+                </a>
+                <span class="slogan-2"> MuSync Online Music Player </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="partner-login-form">
+              <% if flash.any? %>
+                <% if flash[:alert] %>
+                  <div class="alert alert-danger">
+                    <%= flash[:alert] %>
+                  </div>
+                <% end %>
+              <% end %>
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT AREA START -->
+    <div class="copyright-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="copyright-text">
+              <p><span class="copyright-icon">&copy;</span> Copyright: 2019 MuSync. All Rights Reserved.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- COPYRIGHT AREA END -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-masonary.min.js"></script>
+    <script src="/static/js/owl.carousel.min.js"></script>
+    <script src="/static/js/main.js"></script>
+    <%= javascript_include_tag 'application.js' %>
+    <% #if flash.any? %>
+    <div id="notifications">
+      <script>
+        <%#= show_notifications.html_safe %>
+      </script>
+    </div>
+    <%# end %>
+  </body>
+</html>
+

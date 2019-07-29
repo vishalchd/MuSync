@@ -1,0 +1,36 @@
+---
+:no_error:
+  :code: 0
+:went_wrong:
+  :code: 1
+  :message: Something went wrong please try again  
+:not_found:
+  :code: 1000
+  :message: Not found  
+:invalid_api_key:
+  :code: 1001
+  :message: Invalid api key
+:invalid_auth_token:
+  :code: 1002
+  :message: Invalid auth token
+:validation_errors:
+  :code: 1003
+  :message: Validation errors
+:invalid_otp:
+  :code: 1004
+  :message: Invalid otp 
+:otp_sent:
+  :code: 1005
+  :message: OTP send to your mobile number  
+:sign_up:
+  :code: 1006
+  :message: Signup using recevied otp and other details
+:already_signup:
+  :code: 1007
+  :message: Already signup. Please signin using your mobile 
+:signin:
+  :code: 1008 
+  :message: Signin succcessfull
+:incomplete_signup:
+  :code: 1009
+  :message: Please signup using otp  

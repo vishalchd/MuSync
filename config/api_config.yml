@@ -1,0 +1,19 @@
+default: &default
+
+development:
+  <<: *default
+  api_keys:
+    'c8735d8313ddab28cbe2a5993b7ebbc428299817827457ca': true
+  jwt_secret: '2sF9p+3Yk1PyqQ2IUXj9TdREFZfAz3CfFYvPE36v'
+
+test:
+  <<: *default
+  api_keys:
+    '19071f50a81f7fd90a76d258c3f24660f1a206398f01588e399577a25b41': true
+  jwt_secret: 'vHo1xSw3PkhNKrXnSo8CDkhv+2GNH8bHRd0kpd7B'
+
+production:      
+  <<: *default
+  api_keys:
+    '758b0c276834f5a49cdc8f2d4d65177acee14a9ff60399112d23c596df5d': true
+  jwt_secret: 'rsX6SRV+xUOepkd1QxIRRqCTFTeL2+OW6ncaeZgp'

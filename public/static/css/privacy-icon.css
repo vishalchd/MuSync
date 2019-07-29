@@ -1,0 +1,33 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 06/10/2017 17:17
+  	*/
+
+@font-face {
+  font-family: "privacyicon";
+  src: url("../fonts/privacyicon.eot");
+  src: url("../fonts/privacyicon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/privacyicon.woff") format("woff"),
+       url("../fonts/privacyicon.ttf") format("truetype"),
+       url("../fonts/privacyicon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "privacyicon";
+    src: url("../fonts/privacyicon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: privacyicon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-round:before { content: "\f100"; }
+.flaticon-arrows:before { content: "\f101"; }

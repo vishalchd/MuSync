@@ -1,0 +1,28 @@
+= content_for :nav_title do
+  Dashboard (#{Constants.is_staging_server ? 'Staging' : 'Production'})
+.row.dashboard-overview
+  
+  .col-lg-3.col-sm-6
+    .card
+      .card-content
+        .row
+          .col-xs-3
+            .icon-big.icon_dashboard_first_color.text-center
+              = "<i class='nc-icon nc-single-02'></i>".html_safe
+          .col-xs-9
+            .numbers
+              %p #{Constants::USERS_TEXT}
+              = link_to admin_users_path(recent: 1) do
+                = "<span class='page_link_style_color'>#{@user_count}</span>".html_safe
+        .footer
+          %hr/
+          .stats
+            = link_to admin_users_path(recent: 1) do
+              %i.ti-time
+              #{Constants::LAST_24_HOURS_TEXT}
+             
+           
+:javascript
+  setInterval(function() {
+    window.location.reload();
+  }, 120000);

@@ -1,0 +1,18 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle{:type => 'button'}
+        %span.sr-only Toggle navigation
+        %span.icon-bar.bar1
+        %span.icon-bar.bar2
+        %span.icon-bar.bar3
+      %a.navbar-brand{:href => '/'}
+        = content_for :nav_title
+    .collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = link_to destroy_admin_user_session_path, method: 'delete' do
+            %i.ti-power-off
+            %p Logout
+
+

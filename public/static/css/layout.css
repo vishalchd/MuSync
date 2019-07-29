@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "proximanova";
+    src: url("../fonts/ProximaNova-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "proximanova";
+    src: url("../fonts/ProximaNova-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "proximanova";
+    src: url("../fonts/ProximaNova-Light.otf") format("opentype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "proximanova";
+    src: url("../fonts/proximaNove-Semibold.otf") format("opentype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+
+
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+
+.aligncenter {
+    display: block;
+    margin: 0 auto 15px;
+}
+
+a:focus {
+    outline: 0 solid
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'proximanova', sans-serif;
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+
+body {
+    font-family: 'proximanova', sans-serif;
+    color: #4b4b4b;
+    overflow-x: hidden;
+}
+
+a:hover,
+a:link,
+a:visited,
+a:active {
+    text-decoration: none
+}
+
+
+.layout-section {
+   margin-top: 120px;
+   margin: 106px;
+}
+
+.layout-section a {
+    padding: 40px;
+    width: 600px;
+    height: 400px;
+    background-color: #2eab8d;
+    color: #fff;
+    font-size: 30px;
+    transition: .4s;
+}
+
+.layout-section a:hover {
+    background: #333;
+}
+
+.layout-section h2{
+    text-align: center;
+    font-size: 70px;
+    /* border-bottom: 3px double #333; */
+    border: 1px solid #333;
+    padding: 10px;
+}

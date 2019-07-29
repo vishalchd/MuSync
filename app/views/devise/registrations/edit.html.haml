@@ -1,0 +1,13 @@
+= content_for :nav_title do
+  Password Update
+.card
+  .card-header
+    %h4.title Update Password
+  .card-content 
+    .row
+      .col-sm-6
+        = simple_form_for(resource, url: retailer_registration_path, html: { method: :put }) do |f|
+          = f.input :password, autocomplete: "off" 
+          = f.input :password_confirmation, required: false
+          = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+          = f.button :submit, "Change Password"

@@ -1,0 +1,11 @@
+%h3
+  - if resource_name == :retailer
+    PARTNER
+  SIGN IN TO MuSync
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = f.input :email, placeholder: "#{'MOBILE / ' if resource_name == :retailer}EMAIL"
+  = f.input :password, placeholder: ('&#9733;'*7).html_safe
+
+  .login-btn
+    %button{ type: 'submit'} SIGN IN
+

@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %meta{:content => 'text/html; charset=UTF-8', 'http-equiv' => 'Content-Type'}/
+    %meta{:content => 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0', name: 'viewport'}
+    %title MuSync
+    = csrf_meta_tags
+    %link{ href: 'https://fonts.googleapis.com/css?family=Muli:400,300', rel: 'stylesheet', type: 'text/css' }
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    .loader
+      = image_tag "loading.gif"
+    .wrapper
+      = render 'admin/sidebar'
+      .main-panel
+        = render 'admin/navbar'
+        .content
+          .container-fluid
+            .row
+              = yield
+        = render 'shared/user_footer'

@@ -1,0 +1,17 @@
+.sidebar{'data-active-color' => 'danger', 'data-background-color' => 'white'}
+  .logo.text-center
+    %a.simple-text{:href => '/'}
+      MuSync AdminPanel
+  .sidebar-wrapper
+    %ul.nav
+      %li{ class: active('admin/dashboard') }
+        %a{ href: '/'}
+          %i.ti-dashboard
+          %p Dashboard
+      %li{ class: active('admin/users') }
+        = link_to admin_users_path do
+          = "<i class='nc-icon nc-single-02'></i>".html_safe
+          %p Users    
+
+        
+

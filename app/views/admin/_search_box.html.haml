@@ -1,0 +1,6 @@
+.pull-left
+  = search_form_for @q, url: url, method: 'get', class: 'form-inline dt-bootstrap' do |f| 
+    = yield f
+    .form-group
+      = f.search_field field, placeholder: 'Type name...', autocomplete: false, class: 'form-control input-sm' 
+    %button.btn.btn-sm.btn-warning{ type: 'submit', class: 'margin-left'} #{Constants::SEARCH_TEXT}

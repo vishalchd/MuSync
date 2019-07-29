@@ -1,0 +1,251 @@
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .footer-area p {
+        padding-right: 60px;
+    }
+    .social-links li a {
+        margin-left: 17px;
+        width: 36px;
+        height: 36px;
+        line-height: 33px;
+        font-size: 17px;
+    }
+    .copyright-area {
+        font-size: 12px;
+    }
+
+
+
+
+    .link-one, .link-two, .link-three, .link-four {
+        padding-left: 18px;
+    }
+}
+
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .copyright-area {
+        text-align: center;
+    }
+    .text-right {
+        text-align: center;
+    }
+    ul.social-links {
+        margin-top: 10px;
+    }
+    .social-links li a {
+        margin: 8px;
+        width: 36px;
+        height: 36px;
+        line-height: 33px;
+        font-size: 17px;
+    }
+
+
+
+    .logo, .links {
+        text-align: center;
+    }
+    .logo {
+        margin-bottom: 20px;
+    }
+    .mission-item img {
+        height: 320px;
+    }
+    .section-four {
+        margin-top: 20px;
+    }
+    .mission h3 {
+        width: 74%;
+    }
+    .section-five, .section-six {
+        margin-top: 5px;
+    }
+    .link-one, .link-two, .link-three, .link-four {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+    .logo p.logo-text {
+        margin-left: 5px;
+    }
+    .slogan {
+        padding-left: 34px;
+        padding-bottom: 0;
+        position: absolute;
+        display: inline-block;
+    }
+    .link-one img {
+        width: 14%;
+    }
+    .logo a .tooltiptext {
+        left: 6px;
+    }
+    .logo {
+        margin-bottom: 10px;
+        margin-left: -285px;
+    }
+    .header-area {
+        padding-bottom: 20px;
+    }
+    .gallery-section {
+        margin-top: 150px;
+    }
+    .links a:before {
+        bottom: -4px;
+    }
+}
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+    .footer-area p {
+        padding-right: 20px;
+    }
+    .copyright-area {
+        text-align: center;
+    }
+    .text-right {
+        text-align: center;
+    }
+    ul.social-links {
+        margin-top: 12px;
+    }
+    .social-links li a {
+        margin: 2px;
+        width: 30px;
+        height: 30px;
+        line-height: 25px;
+        font-size: 15px;
+    }
+
+
+
+
+
+    .single-image:nth-child(1), .single-image:nth-child(2),
+    .single-image:nth-child(3),.single-image:nth-child(4),
+    .single-image:nth-child(5),.single-image:nth-child(6),
+    .single-image:nth-child(7),.single-image:nth-child(8),
+    .single-image:nth-child(9),.single-image:nth-child(10) {
+        width: 100%;
+        height: 200px;
+    }
+    .logo {
+        text-align: center;
+    }
+    
+    .mission h3 {
+        font-size: 20px;
+        width: 100%;
+    }
+    .mision-description p {
+        font-size: 18px;
+    }
+    .mission-item p {
+        font-size: 16px;
+    }
+    .section-four p, .section-five p, .section-six p {
+        font-size: 16px;
+    }
+    .section-four h2, .section-five h2, .section-six h2 {
+        font-size: 26px;
+        margin-bottom: 5px;
+    }
+    .section-five, .section-six {
+        margin-top: 5px;
+    }
+    .section-four {
+        margin-top: 20px;
+    }
+    .mission-item img {
+        height: 196px;
+    }
+    .section-six h3 {
+        margin: 20px auto;
+        font-size: 20px;
+    }
+    .header-area {
+        padding-bottom: 5px;
+        padding-top: 10px;
+        z-index: 2;
+    }
+    .logo p {
+        font-size: 13px;
+        padding-top: 5px;
+        margin-bottom: 0;
+    }
+    .logo img {
+        margin-left: 0;
+    }
+    .logo p.logo-text {
+        margin-left: 5px;
+    }
+    .slogan {
+        padding-left: 0;
+        padding-bottom: 10px;
+        position: relative;
+        display: block;
+    }
+    .link-one img {
+        width: 12%;
+    }
+    .link-one, .link-two, .link-three, .link-four {
+        display: inline-block;
+        padding-left: 0;
+        text-align: center;
+        margin-bottom: 6px;
+    }
+    .logo a .tooltiptext {
+        left: 6px;
+    }
+    .logo {
+        margin-top: 9px;
+        margin-left: 0px;
+    }
+    .logo p.logo-text {
+        margin-top: 0px;
+    }
+    .links {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .gallery-section {
+        margin-top: 210px;
+    }
+    .links a:before {
+        bottom: -3px;
+    }
+    .links a:hover:before {
+        width: 30px;
+        margin-left: -15px;
+    }
+
+    .responsive-menu-trigger a.menu-trigger{
+        display: block;
+    }
+
+    .off-canvas-menu{
+        display: block;
+        /* margin-top: -100px; */
+    }
+
+    .links{
+        display: none;
+    }
+
+    .image-list {
+        margin-top: -90px;
+    }
+}
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {}

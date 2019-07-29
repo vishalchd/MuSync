@@ -1,0 +1,314 @@
+/* TRUST & SAFTEY PAGE CSS */
+
+
+.section-bg-2 {
+    background-image: url("../img/trust/trust-hero-1.jpg");
+    background-color: #ddd;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+}
+.hero-area-2 {
+    background-image: url("../img/trust/trust-hero-2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    width:100%;
+    height: 515px;
+}
+
+.section-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.section-tablecell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+.parallax-hero-area {
+	height: 460px;
+	text-align: center;
+	color: #fff;
+	margin-top: 99px;
+}
+.overlay {
+    position: relative;
+    z-index: 1;
+    background-attachment: fixed;
+}
+.overlay:after{
+    background: #000 none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.hero-box h1 {
+    font-size: 40px;
+    font-family: "ProximaNova-Bold";
+  }
+  .hero-box {
+    font-size: 28px;
+  }
+  .boxed-btn {
+    background: #f73214;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: "ProximaNove-Semibold";
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 4px;
+    margin-top: 25px;
+    -webkit-transition: .3s;
+    transition: .3s;
+  }
+  .boxed-btn:hover {
+    background: #BA1B02;
+    color: #fff;
+  }
+
+.trust-content-area {
+    background: #fff;
+}
+
+  /* REVIEW AREA */
+  .cf {
+	zoom: 1;
+}
+.cf:before, .cf:after {
+	content: " ";
+	display: table;
+}
+.review-area {
+    position: relative;
+    z-index: 2;
+}
+
+.review-area ul li:first-child {
+	background-color: #f7f7f7;
+	color: #b2b2b2;
+	font-weight: 700;
+	padding: 10px;
+	border-radius: 3px 3px 0px 0px;
+}
+
+
+.star-rating-s9 {
+	color: #EEEE02;
+	margin-left: 1px;
+	font-size: 9px;
+}
+.review-area ul li figure {
+    background: transparent url("../img/trust/sprite-1.png") no-repeat 0 0;
+    height: 33px;
+    width: 33px;
+    float: left;
+    margin-right: 15px
+}
+
+.review-area ul li figure.ray {
+    background-position: 0 -27px
+}
+
+.review-area ul li figure.strike {
+    background-position: -35px -27px
+}
+
+.review-area ul li figure.garage {
+    background-position: -70px -27px
+}
+
+.review-area ul li figure.seller {
+    background-position: -42px 0;
+    width: 23px;
+    height: 23px;
+    margin-right: 7px
+}
+
+.review-area ul {
+    background: #fdfdfd;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-radius: 5px;
+    position: absolute;
+    left: 40px;
+    top: -390px;
+  }
+  .review-area li {
+    display: block;
+    border-bottom: 1px solid #eaeaea;
+    padding: 15px;
+    position: relative;
+  }
+  .review-content {
+    padding-left: 50px;
+  }
+
+
+
+.review-area ul li>div p {
+    font-size: 12px;
+    line-height: 17px
+}
+
+.review-area ul li>div span {
+    font-size: 9px;
+    color: #777777
+}
+
+.review-area ul li>div .seller-feedback {
+    margin-top: 20px;
+    width: 275px;
+    margin-left: -15px
+}
+
+.review-area ul li>div .seller-feedback strong {
+    margin-bottom: 4px
+}
+
+.review-area ul li .toggle-preview {
+	background: transparent url("../img/trust/sprite-1.png") no-repeat -21px 0;
+	width: 20px;
+	height: 16px;
+	position: absolute;
+	cursor: pointer;
+	right: 10px;
+	top: 10px;
+}
+
+.review-area ul li .toggle-preview:hover {
+    background: transparent url("../img/trust/sprite-1.png") no-repeat -1px 0
+}
+
+.review-area .preview-image-holder {
+	background-color: #fff;
+	position: absolute;
+	width: 171px;
+	height: 129px;
+	left: 354px;
+	margin-top: -45px;
+	padding: 7px;
+	display: none;
+	border-radius: 3px;
+	top: 14px;
+}
+.preview-image-holder.active {
+    display: block;
+}
+
+.review-area .preview-image-holder:after {
+    right: 100%;
+    top: 35%;
+    border: solid transparent;
+    content: ' ';
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-right-color: #fff;
+    border-width: 8px;
+    margin-top: -8px
+}
+
+.review-area .preview-image-holder .preview-image {
+    background: transparent url("../img/trust/sprite-2.jpg") no-repeat;
+    height: 100%;
+    width: 100%
+}
+
+.review-area .preview-image-holder.first-review .preview-image {
+    background-position: 0 0
+}
+
+.review-area .preview-image-holder.second-review .preview-image {
+    background-position: -172px 0
+}
+
+.review-area .preview-image-holder.third-review .preview-image {
+    background-position: -344px 0
+}
+
+
+
+
+
+
+
+
+
+
+
+.about-heading {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 22px;
+  }
+  .about-heading h2 {
+    margin-bottom: 50px;
+    font-size: 26px;
+    font-family: "ProximaNove-Semibold";
+  }
+  .review-text {
+    padding: 30px;
+    font-size: 16px;
+  }
+  .review-text h3 {
+    font-size: 24px;
+    font-family: "ProximaNove-Semibold";
+    margin-bottom: 25px;
+  }
+  .service-title {
+    text-align: center;
+    padding: 70px 0;
+    font-size: 22px;
+  }
+  .service-title h2 {
+    font-family: "ProximaNove-Semibold";
+    margin-bottom: 30px;
+  }
+  .single-service-box {
+    text-align: center;
+    padding: 30px;
+  }
+  .service-content {
+    margin-top: 20px;
+    font-size: 17px;
+  }
+  .service-content h3 {
+    font-size: 24px;
+    font-family: "ProximaNove-Semibold";
+    margin-bottom: 20px;
+  }
+
+
+
+/* CTA AREA CSS */  
+.cta-area {
+    background: #2e2d2d;
+    position: relative;
+    z-index: 1;
+    font-size: 22px;
+    color: #fff;
+    font-family: "ProximaNova-Bold";
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 50px;
+  }
+  .clock {
+    margin-top: -63px;
+  }
+  .cta-area p {
+    margin-bottom: 0;
+    margin-top: 30px;
+  }

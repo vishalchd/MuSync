@@ -1,0 +1,177 @@
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {}
+
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .partner-hero-area-1 {
+        height: 910px;
+        margin-top: 155px;
+    }
+    .hero-area-1-content {
+        padding: 70px 40px;
+    }
+    .hero-form {
+        position: relative;
+        margin: 0 auto;
+        left: auto;
+        top: -25px;
+        width: 80%;
+    }
+    .service-title {
+        margin: 40px;
+    }
+    .partner-service-area {
+        padding-top: 0;
+    }
+    .partner-hero-area-2 {
+        height: 300px;
+    }
+    img.mobile-view {
+        display: block;
+        margin: 0 auto;
+    }
+    .foot3 {
+        text-align: center
+    }
+    .foot3 span,
+    .copy span,
+    .footlogo,
+    .social,
+    .copy span {
+        display: block
+    }
+    .foot3 span.sp {
+        display: none
+    }
+    .copy {
+        text-align: center
+    }
+    .footlogo {
+        padding: 15px 0
+    }
+    .footapp {
+        width: auto;
+        float: none;
+        text-align: center
+    }
+    .footlinks {
+        float: none;
+        width: auto;
+        padding-top: 30px;
+        text-align: center
+    }
+    .apps2 a img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footlinks ul {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .foot3 {
+        padding: 25px;
+    }
+    .part-service {
+        padding: 35px 25px;
+    }
+    a.footlogo {
+        margin-left: 0;
+    }
+    ul.social-links {
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+    .partner-hero-area-1 {
+        height: 100%;
+        margin-top: 120px;
+    }
+    .hero-area-1-content {
+        padding: 70px 40px;
+    }
+    .hero-form {
+        position: relative;
+        margin: 0 auto;
+        left: auto;
+        top: -25px;
+        width: 98%;
+    }
+    .service-title {
+        margin: 40px;
+    }
+    .partner-service-area {
+        padding-top: 0;
+    }
+    .partner-hero-area-2 {
+        height: 300px;
+    }
+    img.mobile-view {
+        display: block;
+        margin: 0 auto;
+    }
+    .foot3 {
+        text-align: center
+    }
+    .foot3 span,
+    .copy span,
+    .footlogo,
+    .social,
+    .copy span {
+        display: block
+    }
+    .foot3 span.sp {
+        display: none
+    }
+    .copy {
+        text-align: center
+    }
+    .footlogo {
+        padding: 15px 0
+    }
+    .footapp {
+        width: auto;
+        float: none;
+        text-align: center
+    }
+    .footlinks {
+        float: none;
+        width: auto;
+        padding-top: 30px;
+        text-align: center
+    }
+    .apps2 a img {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footlinks ul {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        width: auto;
+    }
+    .foot3 {
+        padding: 25px;
+    }
+    .part-service {
+        padding: 35px 25px;
+    }
+    a.footlogo {
+        margin-left: 0;
+    }
+    ul.social-links {
+        margin-left: 0;
+    }
+}
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {}

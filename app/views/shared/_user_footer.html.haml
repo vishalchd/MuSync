@@ -1,0 +1,13 @@
+#ctrl{'data-name': params[:controller]}
+%footer.footer
+  .container-fluid
+    / .copyright.pull-left
+    /   %i.ti-mobile= SITE_DATA[:contact_no]
+    %center.copyright
+      &copy;
+      %span#c_year
+      MuSync Pvt. Ltd.
+- if flash.any?
+  #notifications
+    :javascript
+      #{show_notifications.html_safe}
