@@ -6,6 +6,8 @@ class Admin::DashboardController < AdminAppController
     # To Fetch New Mobile Platform Users Count (created in Last 24 Hours)
   	@user_count = User.last_24_hours.count
 
+  	# Many other sections yet to come here
+
   end
 
 end
