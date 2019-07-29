@@ -5,6 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'rails', '~> 5.1.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.4.10'
+
+gem 'activerecord-mysql-adapter'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
