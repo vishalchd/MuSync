@@ -1,0 +1,33 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+
+  adapter: "mysql2"
+  encoding: utf8
+  pool: 5
+#  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  host: localhost
+  database: musync_development
+  username: root
+  password: root@123
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: musync_test
+
+production:
+  <<: *default
+  database: musync_production
+  url: <%= ENV["DATABASE_URL"] %>
+  username: b6905fbd6bf51b
+  password: a753fc29
