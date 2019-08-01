@@ -6,6 +6,8 @@ gem 'rails', '~> 5.1.0'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.4.10'
 
+gem 'sqlite3'
+
 #gem 'activerecord-mysql-adapter'
 
 # Use Puma as the app server
