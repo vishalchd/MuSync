@@ -9,14 +9,14 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-#  socket: /tmp/mysql.sock
+  username: root
+  password: root@123
+  socket: /tmp/mysql.sock
 
 development:
   <<: *default
   host: localhost
   database: musync_development
-  username: root
-  password: root@123
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -28,6 +28,5 @@ test:
 production:
   <<: *default
   database: musync_production
-  url: <%= ENV["DATABASE_URL"] %>
-  username: b6905fbd6bf51b
-  password: a753fc29
+  username: offer_booth
+  password: <%= ENV['MUSYNC_DATABASE_PASSWORD'] %>
