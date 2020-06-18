@@ -29,6 +29,6 @@ Rails.application.routes.draw do
   end
 
   get 'health'  => 'welcome#health'
-  root 'welcome#index'
+  root :to => 'welcome#index'
 
 end
