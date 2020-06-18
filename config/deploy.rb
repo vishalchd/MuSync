@@ -52,7 +52,7 @@ task :deploy do
     # Put things that will set up an empty directory into a fully set-up
     # instance of your project.
     invoke :'git:clone'
-    #invoke :'deploy:link_shared_paths'
+    invoke :'deploy:link_shared_paths'
     #invoke :'bundle:install'
     #invoke :'rails:db_migrate'
     #invoke :'rails:assets_precompile'
@@ -69,7 +69,7 @@ task :deploy do
   # you can use `run :local` to run tasks on local machine before of after the deploy scripts
   # run(:local){ say 'done' }
   run(:local){
-      command %(sleep 2 && curl http://#{fetch(:domain)}/health)
+      command %(sleep 2 && curl http://206.81.8.136/health)
   }
 end
 

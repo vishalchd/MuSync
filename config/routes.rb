@@ -29,6 +29,5 @@ Rails.application.routes.draw do
   end
 
   get 'health'                                => 'welcome#health'
-  get 'health_with_staging_environment_setup' => 'welcome#health_with_staging_environment_setup'
 
 end
