@@ -65,7 +65,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.4.0'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'haml-rails', '~> 1.0.0'
-gem 'simple_form', '~> 3.5.0'
+gem 'simple_form', '~> 5.0.0'
 gem 'kaminari', '~> 1.0.1'
 gem 'font-awesome-rails', '~> 4.7.0.2'
 gem 'dotenv-rails', '~> 2.2.1'
