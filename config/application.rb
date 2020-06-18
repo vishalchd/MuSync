@@ -20,10 +20,6 @@ module MuSync
     # the framework and any gems in your application.
     config.to_prepare do
       Devise::SessionsController.layout 'partner_login'
-      # Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "devise" }
-      # Devise::RegistrationsController.layout "retailer"
-      # Devise::ConfirmationsController.layout "devise"
-      # Devise::UnlocksController.layout "devise"
       Devise::PasswordsController.layout "partner_login"
     end
 
