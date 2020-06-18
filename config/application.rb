@@ -19,13 +19,13 @@ module MuSync
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.to_prepare do
-      Devise::SessionsController.layout 'partner_login'
-      Devise::PasswordsController.layout "partner_login"
+      #Devise::SessionsController.layout 'partner_login'
+      #Devise::PasswordsController.layout "partner_login"
     end
 
-    config.generators.stylesheets = false
-    config.generators.javascripts = false
-    config.assets.precompile += ["*.ttf", "*.woff", "*.svg", "*.eot"] 
+    #config.generators.stylesheets = false
+    #config.generators.javascripts = false
+    #config.assets.precompile += ["*.ttf", "*.woff", "*.svg", "*.eot"] 
 
   end
 end
