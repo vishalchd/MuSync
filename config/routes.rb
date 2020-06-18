@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   end
 
-  get 'health'                                => 'welcome#health'
+  get 'health'  => 'welcome#health'
+  root 'welcome#index'
 
 end
