@@ -55,8 +55,8 @@ task :deploy do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    invoke :'rails:assets_precompile'
-    invoke :'deploy:cleanup'
+    #invoke :'rails:assets_precompile'
+    #invoke :'deploy:cleanup'
 
     on :launch do
       in_path(fetch(:current_path)) do
