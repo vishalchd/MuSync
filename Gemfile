@@ -78,7 +78,7 @@ gem 'ransack', '~> 1.8.3'
 gem 'cocoon', '~> 1.2.9'
 
 gem 'ejs'
-gem 'mini_magick', '~> 4.8.0'
+gem 'mini_magick', '~> 4.9.4'
 gem 'rmagick'
 gem 'paranoia', '~> 2.4'
 gem 'mina-sidekiq'
