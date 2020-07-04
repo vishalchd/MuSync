@@ -13,13 +13,13 @@
             .numbers
               %p #{Constants::USERS_TEXT}
               = link_to admin_users_path(recent: 1) do
-                = "<span class='page_link_style_color'>#{@user_count}</span>".html_safe
+                = "<span class='page_link_style_color'>#{@user_count} / #{@total_users_count}</span>".html_safe
         .footer
           %hr/
           .stats
             = link_to admin_users_path(recent: 1) do
               %i.ti-time
-              #{Constants::LAST_24_HOURS_TEXT}
+              #{Constants::LAST_24_HOURS_TEXT} / Total Users  
              
            
 :javascript
