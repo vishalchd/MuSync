@@ -16,7 +16,13 @@ Rails.application.routes.draw do
       post 'login'                 => 'users#login'
       post 'signup'                => 'users#signup'    
       post 'forgot_password'       => 'users#forgot_password'
-      post 'forgot_username'       => 'users#forgot_username'      
+      post 'forgot_username'       => 'users#forgot_username'    
+
+      resources :users do
+        collection do
+          post :search
+        end
+      end
 
     end
 

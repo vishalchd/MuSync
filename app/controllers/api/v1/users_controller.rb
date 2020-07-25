@@ -114,6 +114,42 @@ class Api::V1::UsersController < ApiController
 
   end
 
+    # Stub for autocomplete user name search
+  def search
+
+=begin
+    :: Expected Params ::
+  
+  Constants::REQUEST_PARAM_TEXT            => User name
+
+=end  
+
+    begin  
+
+      users = User.where("name LIKE (?)", "%#{param_text}%").order('name ASC') #.map { |user| {:id => user.id, :name => user.name, :is_verified => user.is_verified. :photo_url => user.photo} }
+
+      if users.present?
+        render json: {status: status_code(:ok), message: '', data: users}
+      else
+        render json: {status: status_code(:not_found), message: Constants::NO_MATCHING_RECORD_FOUND}
+      end  
+
+    rescue =>e
+  
+      render json: {status: status_code(:unprocessable_entity), message: Constants::SOMETHING_WENT_WRONG, data: {errors: e.message}}
+
+    end 
+
+  end
+
+  # Stub for permitted parameters in posted request
+
+  def param_text
+
+    params[Constants::REQUEST_PARAM_TEXT]
+
+  end
+
   # Stub to configure Staging/Production Environment
   def configure_environment
 

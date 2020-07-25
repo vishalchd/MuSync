@@ -67,6 +67,7 @@ class Constants
     ## Review Request Parameters
 
     REQUEST_PARAM_ID                         = "id"
+    REQUEST_PARAM_TEXT                       = "text"
 
     REQUEST_PARAM_LATITUDE                   = "latitude"
     REQUEST_PARAM_LONGITUDE                  = "longitude"
@@ -156,7 +157,7 @@ class Constants
     OPTION_MOBILE                            = "Mobile"
     OPTION_LANDLINE                          = "Landline"
 
-    SOMETHING_WENT_WRONG 		                 = "Something went wrong" 
+    SOMETHING_WENT_WRONG 		             = "Something went wrong" 
 
     CONFIRM_DELETE_TEXT                      = "Are you sure to delete?"
 
