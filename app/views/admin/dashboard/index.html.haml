@@ -20,7 +20,26 @@
             = link_to admin_users_path(recent: 1) do
               %i.ti-time
               #{Constants::LAST_24_HOURS_TEXT} / Total Users  
-             
+
+  .col-lg-3.col-sm-6
+    .card
+      .card-content
+        .row
+          .col-xs-3
+            .icon-big.icon_dashboard_first_color.text-center
+              = "<i class='nc-icon nc-diamond'></i>".html_safe
+          .col-xs-9
+            .numbers
+              %p Follow Requests (CF/T)
+              = link_to admin_user_follow_requests_path(recent: 1) do
+                = "<span class='page_link_style_color'> #{@total_follow_confirmed_requests_count} / #{@total_follow_requests_count} </span>".html_safe
+        .footer
+          %hr/
+          .stats
+            = link_to admin_user_follow_requests_path(recent: 1) do
+              %i.ti-time
+              #{Constants::LAST_24_HOURS_TEXT} / Total Requests  
+           
            
 :javascript
   setInterval(function() {

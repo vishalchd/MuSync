@@ -1,0 +1,78 @@
+= content_for :nav_title, 'Follow Requests'
+.card
+  .card-header
+    %h4.title
+      .pull-left.col-xs-9
+        = search_form_for @q, url: admin_user_follow_requests_path, method: 'get', class: 'form-inline dt-bootstrap' do |f|
+     
+          //  StartDate
+          %input#q_created_at_gteq.form-control.input-sm.datepicker{:autocomplete => "false", :class => 'margin-left', :name => "q[created_at_gteq]", :placeholder => "Start Date...", :type => "input", :value=>params[:q].present? ? params[:q]["created_at_gteq"] : ""}/
+          
+          //  EndDate
+          %input#q_created_at_lteq.form-control.input-sm.datepicker{:autocomplete => "false", :class => 'margin-left', :name => "q[created_at_lteq]", :placeholder => "End Date...", :type => "input" , :value=>params[:q].present? ? params[:q]["created_at_lteq"] : ""}/     
+            
+          %button.btn.btn-sm.btn-warning{ type: 'submit', class: 'margin-left'} Search
+      
+  .card-content
+    %table.table{:class => "table table-hover"}
+      %thead
+        - if @follow_requests.size > 0
+          %tr{:style => "height:60px"}
+            %th  # 
+            %th= sort_link @q, :user_id, "From" 
+            %th= sort_link @q, :user_to_follow_id, "To" 
+            %th= Constants::STATUS_TEXT
+            %th= sort_link(@q, :created_at, 'Creation Date')
+      %tbody
+        - @follow_requests.each_with_index do |follow_request, counter|
+
+        - user           = follow_request.user
+        - user_to_follow = follow_request.user_to_follow
+
+        - request_status = (follow_request.confirmed_on.nil? && follow_request.cancelled_on.nil?) ? "Pending" : (follow_request.is_confirmed ? "Confirmed" : "Cancelled")
+        - status_date    = (follow_request.confirmed_on.nil? && follow_request.cancelled_on.nil?) ? "" : (follow_request.is_confirmed ? Constants.convert_date_to_hms_format(follow_request.confirmed_on) : Constants.convert_date_to_hms_format(follow_request.cancelled_on))
+        - user_link      = link_to "#{user.name}<br>#{user.email}".html_safe, admin_user_path(user), :class=> 'page_link_color') 
+        - user_to_follow_link      = link_to "#{user_to_follow.name}<br>#{user_to_follow.email}".html_safe, admin_user_path(user_to_follow), :class=> 'page_link_color') 
+
+          %tr
+            %td{:width=>"2%", :style => 'vertical-align:top'}= index_no + counter
+            %td{:style => 'vertical-align:top'}= user_link 
+            %td{:style => 'vertical-align:top'}= user_to_follow_link
+            %td{:style => 'vertical-align:top'}= request_status
+            %td{:style => 'vertical-align:top'}= "#{follow_request.created_at.strftime('%b %d, %Y')}<br/><span class='text-muted'><i class='ob-icons icon-time-alarm text-muted'></i> #{Constants.convert_date_to_hms_format(follow_request.created_at)}</span>".html_safe
+ 
+    // Pager
+    .pagination-container
+      = paginate @follow_requests
+
+:javascript
+
+  $('.datepicker').datetimepicker({
+    format: 'YYYY-MM-DD',    //use this format if you want the 12hours timpiecker with AM/PM toggle
+    icons: {
+        time: "ob-icons icon-time-alarm",
+        date: "fa fa-calendar",
+        up: "fa fa-chevron-up",
+        down: "fa fa-chevron-down",
+        previous: 'ob-icons icon-double-left',
+        next: 'ob-icons icon-double-right',
+        today: 'fa fa-screenshot',
+        clear: 'fa fa-trash',
+        close: 'fa fa-remove'
+    }
+  });
+
+  $('#input_starttime,#input_end_time').datetimepicker({
+    format: 'HH:mm:ss',
+    icons: {
+        time: "ob-icons icon-time-alarm",
+        date: "fa fa-calendar",
+        up: "fa fa-chevron-up",
+        down: "fa fa-chevron-down",
+        previous: 'ob-icons icon-double-left',
+        next: 'ob-icons icon-double-right',
+        today: 'fa fa-screenshot',
+        clear: 'fa fa-trash',
+        close: 'fa fa-remove'
+    }
+  });

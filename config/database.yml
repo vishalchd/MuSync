@@ -27,6 +27,6 @@ test:
 
 production:
   <<: *default
-  database: musync_production
-  username: offer_booth
-  password: <%= ENV['MUSYNC_DATABASE_PASSWORD'] %>
+  host: localhost
+  database: musync_development
+

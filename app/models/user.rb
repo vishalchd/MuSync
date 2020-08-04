@@ -7,6 +7,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, allow_blank: true, uniqueness: true, format: { with: Devise.email_regexp, message: Constants::INVALID_EMAIL_ADDRESS }
 
+  has_many :user_follow_requests, dependent: :destroy
+
   scope :last_24_hours, ->{ where("created_at >= ?", 24.hours.ago)}
 
   # Stub to setup Json to be returned on Successful SignIN Request

@@ -62,6 +62,13 @@ class Constants
     
     end 
 
+    # Stub to convert date to MDY HH MM SS format
+    def self.convert_date_to_hms_format(full_date)
+        
+        full_date.strftime("%I:%M:%S") if full_date.present?
+    
+    end 
+
     # Request/Response Params
 
     ## Review Request Parameters
