@@ -1,4 +1,6 @@
-= content_for :nav_title, 'Users'
+= content_for :nav_title do
+  = Constants.get_breadcomb_link(Constants::BREADCOMB_SECTION_INDEX_USER, Constants::BREADCOMB_SECTION_MODE_INDEX, nil) 
+  
 .card
   .card-header
     %h4.title

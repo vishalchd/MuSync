@@ -1,4 +1,6 @@
-= content_for :nav_title, 'Follow Requests'
+= content_for :nav_title do
+  = Constants.get_breadcomb_link(Constants::BREADCOMB_SECTION_INDEX_FOLLOW_REQUEST, Constants::BREADCOMB_SECTION_MODE_INDEX, nil) 
+  
 .card
   .card-header
     %h4.title
@@ -29,16 +31,16 @@
         - user           = follow_request.user
         - user_to_follow = follow_request.user_to_follow
 
-        - request_status = (follow_request.confirmed_on.nil? && follow_request.cancelled_on.nil?) ? "Pending" : (follow_request.is_confirmed ? "Confirmed" : "Cancelled")
-        - status_date    = (follow_request.confirmed_on.nil? && follow_request.cancelled_on.nil?) ? "" : (follow_request.is_confirmed ? Constants.convert_date_to_hms_format(follow_request.confirmed_on) : Constants.convert_date_to_hms_format(follow_request.cancelled_on))
-        - user_link      = link_to "#{user.name}<br>#{user.email}".html_safe, admin_user_path(user), :class=> 'page_link_color') 
-        - user_to_follow_link      = link_to "#{user_to_follow.name}<br>#{user_to_follow.email}".html_safe, admin_user_path(user_to_follow), :class=> 'page_link_color') 
+        - request_status = (follow_request.confirmed_on.nil? && follow_request.cancelled_on.nil?) ? "Pending" : (follow_request.is_confirmed ? "<span style='color:green' >Confirmed</span>" : "<span style='color:red' >Cancelled</span>")
+        - status_date    = (follow_request.confirmed_on.nil? && follow_request.cancelled_on.nil?) ? "" : (follow_request.is_confirmed ? Constants.convert_date_to_mdyhm_ampm_format(follow_request.confirmed_on) : Constants.convert_date_to_mdyhm_ampm_format(follow_request.cancelled_on))
+        - user_link      = link_to "<b><span style='color:black' >#{user.name}</span></b><br>#{user.email}".html_safe, admin_user_path(user), :class=> 'page_link_color' 
+        - user_to_follow_link = link_to "<b><span style='color:black' >#{user_to_follow.name}</span></b><br>#{user_to_follow.email}".html_safe, admin_user_path(user_to_follow), :class=> 'page_link_color' 
 
           %tr
             %td{:width=>"2%", :style => 'vertical-align:top'}= index_no + counter
             %td{:style => 'vertical-align:top'}= user_link 
             %td{:style => 'vertical-align:top'}= user_to_follow_link
-            %td{:style => 'vertical-align:top'}= request_status
+            %td{:style => 'vertical-align:top'}= "#{request_status}<br/>#{status_date}".html_safe
             %td{:style => 'vertical-align:top'}= "#{follow_request.created_at.strftime('%b %d, %Y')}<br/><span class='text-muted'><i class='ob-icons icon-time-alarm text-muted'></i> #{Constants.convert_date_to_hms_format(follow_request.created_at)}</span>".html_safe
  
     // Pager

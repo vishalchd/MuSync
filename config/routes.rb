@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       post 'signup'                => 'users#signup'    
       post 'forgot_password'       => 'users#forgot_password'
       post 'forgot_username'       => 'users#forgot_username'    
+      post 'make_follow_request'   => 'follow_requests#create_follow_request'
+      post 'follow_request_action' => 'follow_requests#follow_request_action'
 
       resources :users do
         collection do
@@ -30,7 +32,14 @@ Rails.application.routes.draw do
 
   namespace :admin do
 
-  	resources :users
+  	resources :users do
+
+      get 'show_followers' => 'users#show_followers', as: :show_followers
+      get 'show_followings' => 'users#show_followings', as: :show_followings
+      get 'show_pending_requests' => 'users#show_pending_requests', as: :show_pending_requests      
+
+    end
+
     resources :user_follow_requests
 
 

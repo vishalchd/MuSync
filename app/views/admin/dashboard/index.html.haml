@@ -1,5 +1,6 @@
 = content_for :nav_title do
-  Dashboard (#{Constants.is_staging_server ? 'Staging' : 'Production'})
+  = "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><li class='breadcrumb-item active'> Dashboard <<b><span style='color:red'>#{Constants::BUILD_VERSION}</span></b>> (#{Constants.is_staging_server ? 'Staging' : 'Production'}) </li></o></nav>".html_safe 
+
 .row.dashboard-overview
   
   .col-lg-3.col-sm-6

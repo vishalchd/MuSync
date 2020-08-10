@@ -1,7 +1,5 @@
 = content_for :nav_title do
-  = link_to admin_users_path, class: 'navbar-brand' do
-    %i.ti-angle-double-left
-    = "#{Constants::USERS_TEXT}" 
+  = Constants.get_breadcomb_link(Constants::BREADCOMB_SECTION_INDEX_USER, Constants::BREADCOMB_SECTION_MODE_SHOW, [@user])
 
 .card
 
@@ -22,9 +20,12 @@
               %div{:class => "text-center"}
                 %div{:class => "row"}
                   %div{:class => "col-md-4"}
-                  %div{:class => "col-md-3"}
-                    %h5
-                      %br
+                    = link_to "<h5>#{@followings_count}<br /><small>Following</small></h5>".html_safe, admin_user_show_followings_path(:id => @user.id, :user_id => @user.id), :class=> 'page_link_color'
+                  %div{:class => "col-md-4"}
+                    = link_to "<h5>#{@followers_count} <br /><small>Followers</small></h5>".html_safe, admin_user_show_followers_path(:id => @user.id, :user_id => @user.id), :class=> 'page_link_color'
+                  %div{:class => "col-md-4"}
+                    = link_to "<h5>#{@pending_count} <br /><small>Open Requests</small></h5>".html_safe, admin_user_show_pending_requests_path(:id => @user.id, :user_id => @user.id), :class=> 'page_link_color'
+
           %div{:class => "col-lg-8 col-md-7"}                      
             %div{:class => "card"}                    
               %div{:class => "card-header"}  

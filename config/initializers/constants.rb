@@ -7,6 +7,20 @@ This File contains constants and every global thing
 
 class Constants
 
+    BUILD_VERSION   = "20200809.1140" # [YYYYMMDD.HHMM] 24 HOURS FORMAT
+
+    FOLLOW_REQUEST_ACTION_MODE_CONFIRM = 1 
+    FOLLOW_REQUEST_ACTION_MODE_CANCEL  = 2 
+
+    BREADCOMB_SECTION_INDEX_USER             = 0
+    BREADCOMB_SECTION_INDEX_FOLLOW_REQUEST   = 1 
+
+    BREADCOMB_SECTION_MODE_INDEX             = 0 
+    BREADCOMB_SECTION_MODE_SHOW              = 1
+    BREADCOMB_SECTION_MODE_ADD               = 2
+    BREADCOMB_SECTION_MODE_EDIT              = 3
+    BREADCOMB_SECTION_MODE_MISC              = 4
+
     USER_TYPE = {
       'Valid' => 0
     }.freeze 
@@ -69,12 +83,113 @@ class Constants
     
     end 
 
+    # Stub to get time in current zone
+    def self.get_current_time()
+
+      return Time.now.in_time_zone
+
+    end
+
+    # Stub to get Date in current zone
+    def self.get_current_date()
+
+      return Constants.get_current_time.to_date
+
+    end
+
+  # Stub to get Breadcomb link based on Section and Mode
+  def self.get_breadcomb_link(breadcomb_section_index, breadcomb_link_mode, arr_data)
+
+    link_text         = ""
+    data_title        = ""
+    data_url_root     = "" 
+    section_title     = ""
+
+    data_object       = !arr_data.nil? ? arr_data[0] : nil
+
+    case breadcomb_section_index
+
+     when BREADCOMB_SECTION_INDEX_USER
+     
+        section_title  = Constants::USERS_TEXT  
+        data_url_root  = "users"
+        data_title     = data_object.try(:name)    
+
+     when BREADCOMB_SECTION_INDEX_FOLLOW_REQUEST
+
+        section_title  = Constants::FOLLOW_REQUESTS_TEXT  
+        data_url_root  = "user_follow_requests"
+        data_title     = data_object.try(:name)                          
+
+    end # End of Case
+
+=begin
+
+    BREADCOMB_SECTION_INDEX_GP_D_FEEDBACKS   = 13    
+
+=end
+
+
+    case breadcomb_link_mode
+
+      when BREADCOMB_SECTION_MODE_INDEX
+
+        link_text = "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><li class='breadcrumb-item active'> #{section_title} </li></o></nav>".html_safe
+      
+      when BREADCOMB_SECTION_MODE_SHOW
+
+        link_text = "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><i class='ob-icons icon-double-left text-muted breadcrumb-icon'></i><li class='breadcrumb-item'><a href='../#{data_url_root}'> #{section_title} </a></li> <li class='breadcrumb-item active' >#{data_title}</li></o></nav>".html_safe 
+
+      when BREADCOMB_SECTION_MODE_ADD
+
+        is_reload = !arr_data.nil? ? arr_data[1] : false
+
+        root_depth  = is_reload ? "" : "../"
+
+        link_text = "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><i class='ob-icons icon-double-left text-muted breadcrumb-icon'></i><li class='breadcrumb-item'><a href='#{root_depth}#{data_url_root}'> #{section_title} </a></li></o></nav>".html_safe
+
+      when BREADCOMB_SECTION_MODE_EDIT
+
+        is_reload = !arr_data.nil? ? arr_data[1] : false
+
+        root_depth  = is_reload ? "" : "../"
+
+        link_text = "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><i class='ob-icons icon-double-left text-muted breadcrumb-icon'></i><li class='breadcrumb-item'><a href='#{root_depth}../#{data_url_root}'> #{section_title} </a></li> <li class='breadcrumb-item' ><a href='#{root_depth}../#{data_url_root}/#{data_object.id}'>#{data_title}</a></li><li class='breadcrumb-item active'>Edit</li></o></nav>".html_safe
+      
+      when BREADCOMB_SECTION_MODE_MISC
+
+        misc_object_title = !arr_data.nil? ? arr_data[1] : ""
+
+        if arr_data.size  == 2
+
+          link_text =  "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><i class='ob-icons icon-double-left text-muted breadcrumb-icon'></i><li class='breadcrumb-item'><a href='../../#{data_url_root}'> #{section_title} </a></li> <li class='breadcrumb-item' ><a href='../../#{data_url_root}/#{data_object.id}'>#{data_title}</a></li><li class='breadcrumb-item active'>#{misc_object_title}</li></o></nav>".html_safe 
+
+        elsif arr_data.size == 3
+
+           second_url_construct = arr_data[2]
+
+           secondary_data_url   = second_url_construct[1]
+           secondary_data_title = second_url_construct[0]   
+
+          link_text = "<nav aria-label='breadcrumb' class='d-none d-md-inline-block ml-md-4'><ol class='breadcrumb'><i class='ob-icons icon-double-left text-muted breadcrumb-icon'></i><li class='breadcrumb-item'><a href='../../#{data_url_root}'> #{section_title} </a></li> <li class='breadcrumb-item' ><a href='../../#{data_url_root}/#{data_object.id}'>#{data_title}</a></li> <li class='breadcrumb-item' ><a href='../../#{data_url_root}/#{data_object.id}/#{secondary_data_url}?id=#{data_object.id}'>#{secondary_data_title}</a></li> <li class='breadcrumb-item active'>#{misc_object_title}</li></o></nav>".html_safe             
+
+        end
+
+    end # end of Case
+
+    return link_text
+
+  end
+
     # Request/Response Params
 
     ## Review Request Parameters
 
     REQUEST_PARAM_ID                         = "id"
     REQUEST_PARAM_TEXT                       = "text"
+
+    REQUEST_PARAM_USER_TO_FOLLOW_ID          = "user_to_follow_id"
+    REQUEST_PARAM_MODE                       = "mode" 
 
     REQUEST_PARAM_LATITUDE                   = "latitude"
     REQUEST_PARAM_LONGITUDE                  = "longitude"
@@ -87,11 +202,17 @@ class Constants
     REQUEST_PARAM_RECENT                     = "recent"
     REQUEST_PARAM_PAGE                       = "page" 
     
+
+    RESPONSE_PARAM_STATUS_TEXT               = "status_text"
+    
+
     # String Constants
 
     MALE_TEXT                                = "Male"
     FEMALE_TEXT                              = "Female"
     UNSPECIFIED                              = "Unspecified" 
+
+    STATUS_TEXT                              = "Status"
     
     YES_TEXT                                 = "Yes"
     NO_TEXT                                  = "No"
@@ -120,6 +241,7 @@ class Constants
     # ADMIN DASHBOARD OPTIONS START
 
     USERS_TEXT                               = "Users"
+    FOLLOW_REQUESTS_TEXT                     = "Follow Requests"
     LAST_24_HOURS_TEXT                       = " In Last 24 Hours"
 
     # ADMIN DASHBOARD OPTIONS END
