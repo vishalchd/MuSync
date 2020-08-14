@@ -8,7 +8,7 @@
         - if @follow_requests.size > 0
           %tr{:style => "height:60px"}
             %th  # 
-            %th= sort_link @q, :user_to_follow_id, "To" 
+            %th= sort_link @q, :user_id, "User" 
             %th= Constants::STATUS_TEXT
             %th= sort_link(@q, :created_at, 'Request Date')
       %tbody

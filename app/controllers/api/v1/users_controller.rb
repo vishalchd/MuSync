@@ -126,7 +126,7 @@ class Api::V1::UsersController < ApiController
 
     begin  
 
-      users = User.where("name LIKE (?)", "%#{param_text}%").order('name ASC') #.map { |user| {:id => user.id, :name => user.name, :is_verified => user.is_verified. :photo_url => user.photo} }
+      users = User.where("name LIKE (?)", "%#{param_text}%").all.map{ |user| {:id => user.id, :name => user.name, :is_verified => user.is_verified, :photo_url => user.photo}}
 
       if users.present?
         render json: {status: status_code(:ok), message: '', data: users}

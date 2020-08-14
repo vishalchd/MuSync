@@ -1,5 +1,5 @@
 class Admin::UsersController < AdminAppController
-  before_action :set_user, only: [:destroy, :show, :show_followers, :show_followings, :show_pending_requests]
+  before_action :set_user, only: [:destroy, :show, :show_followers, :show_followings, :show_pending_requests, :verify_action]
 
   # Stub to Fetch Users Listing as per various Search Filters
   def index
@@ -84,6 +84,19 @@ class Admin::UsersController < AdminAppController
       format.json { head :no_content }
     end
   end
+
+  def verify_action
+
+    is_verified = @user.is_verified
+    @user.is_verified = !is_verified
+    @user.save
+
+    respond_to do |format|
+      format.html { redirect_to admin_users_url, notice: is_verified ? 'User status is successfully unverified.' : 'User status is successfully verified.' }
+      format.json { head :no_content }
+    end
+ 
+  end    
 
   private
     # Use callbacks to share common setup or constraints between actions.

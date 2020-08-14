@@ -34,9 +34,10 @@ Rails.application.routes.draw do
 
   	resources :users do
 
-      get 'show_followers' => 'users#show_followers', as: :show_followers
+      get 'show_followers'  => 'users#show_followers', as: :show_followers
       get 'show_followings' => 'users#show_followings', as: :show_followings
       get 'show_pending_requests' => 'users#show_pending_requests', as: :show_pending_requests      
+      get 'verify_action'   => 'users#verify_action'
 
     end
 

@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   scope :last_24_hours, ->{ where("created_at >= ?", 24.hours.ago)}
 
+  default_scope { order(name: :asc) }
+
   # Stub to setup Json to be returned on Successful SignIN Request
 	def as_signin_json
     {

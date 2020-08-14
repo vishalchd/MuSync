@@ -27,7 +27,7 @@
         - @users.each_with_index do |user, i|
           %tr
             %td{:style => 'vertical-align:top' }= index_no + i
-            %td{:style => 'vertical-align:top' }= link_to "#{user.name}".html_safe, admin_user_path(user), :class=> 'page_link_color'
+            %td{:style => 'vertical-align:top' }= link_to "#{user.name} #{user.is_verified == true ? "<i class='nc-icon nc-badge icon_dashboard_error_color'></i>" : ''} ".html_safe, admin_user_path(user), :class=> 'page_link_color'
             %td{:style => 'vertical-align:top' }= user.email
             %td{:style => 'vertical-align:top' }= "#{Constants.convert_date_to_full_format(user.created_at)}<br/> #{label_tag(user.created_at >= 24.hours.ago, 'New User', '')}".html_safe
             %td.item-actions
@@ -36,6 +36,8 @@
                   %i.ti-more
                   %span.caret
                 %ul.dropdown-menu.list_dropdown_dropdown_menu
+                  %li
+                    = link_to user.is_verified ? "Unverify" : "Verify", admin_user_verify_action_path(user, :id => user.id), method: :get, data: { confirm: user.is_verified ? 'Are you sure to Unverify user?' : 'Are you sure to Verify user?' } 
                   %li
                     = link_to "Delete", admin_user_path(user), method: :delete, data: { confirm: 'Are you sure to remove this user?' } 
       
