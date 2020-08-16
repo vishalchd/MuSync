@@ -7,10 +7,15 @@ This File contains constants and every global thing
 
 class Constants
 
-    BUILD_VERSION   = "20200809.1140" # [YYYYMMDD.HHMM] 24 HOURS FORMAT
+    BUILD_VERSION   = "20200816.0640" # [YYYYMMDD.HHMM] 24 HOURS FORMAT
 
     FOLLOW_REQUEST_ACTION_MODE_CONFIRM = 1 
     FOLLOW_REQUEST_ACTION_MODE_CANCEL  = 2 
+
+    USER_PROFILE_ACTION_MODE_NAME      = 1
+    USER_PROFILE_ACTION_MODE_EMAIL     = 2
+    USER_PROFILE_ACTION_MODE_PHOTO     = 3
+    USER_PROFILE_ACTION_MODE_PASSWORD  = 4
 
     BREADCOMB_SECTION_INDEX_USER             = 0
     BREADCOMB_SECTION_INDEX_FOLLOW_REQUEST   = 1 
@@ -194,9 +199,12 @@ class Constants
     REQUEST_PARAM_LATITUDE                   = "latitude"
     REQUEST_PARAM_LONGITUDE                  = "longitude"
 
-    REQUEST_PARAM_USEREMAIL                  = "user_email"
-    REQUEST_PARAM_USERNAME                   = "user_name"
-    REQUEST_PARAM_USERPASSWORD               = "user_password"
+    REQUEST_PARAM_USEREMAIL                  = "email"
+    REQUEST_PARAM_USERNAME                   = "name"
+    REQUEST_PARAM_USERPASSWORD               = "password"
+    REQUEST_PARAM_CURRENT_PASSWORD           = "current_password"
+    REQUEST_PARAM_USERPHOTO                  = "photo"
+
     REQUEST_PARAM_DESC                       = "desc"
     REQUEST_PARAM_MOBILE                     = "mobile"
     REQUEST_PARAM_RECENT                     = "recent"

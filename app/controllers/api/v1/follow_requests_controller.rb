@@ -56,6 +56,52 @@ class Api::V1::FollowRequestsController < ApiController
 
 	end	
 
+  # Stub to unFollow Some User
+  def unfollow_request_action
+
+=begin
+    :: Expected Params ::
+  
+  Constants::REQUEST_PARAM_ID   => RequestID
+
+=end 
+
+    begin
+
+      user = current_user rescue nil
+
+      follow_request = UserFollowRequest.find param_id rescue nil
+
+      # Check if Follow Request is valid
+      if follow_request.nil?
+
+        render json: {status: status_code(:not_found), message: "Follow Request not found." }
+        return
+
+      end    
+
+      if follow_request.destroy
+
+        render json: {status: status_code(:ok), message: ""}
+
+      else
+
+        render json: {status: status_code(:unprocessable_entity), message: Constants::SOMETHING_WENT_WRONG}
+
+      end
+
+
+    rescue =>e
+  
+      ## Record Error
+      # area, name, body, reason, related_info
+      render json: {status: status_code(:unprocessable_entity), message: Constants::SOMETHING_WENT_WRONG, data: {errors: e.message}}
+
+    end   
+
+
+  end
+
     # Stub to make Follow Request Action
 	def follow_request_action
 
@@ -63,7 +109,7 @@ class Api::V1::FollowRequestsController < ApiController
     :: Expected Params ::
   
   Constants::REQUEST_PARAM_ID   => RequestID
-  Constants::REQUEST_PARAM_MODE => Action Mode [1 for confirm, 1 for cancel]
+  Constants::REQUEST_PARAM_MODE => Action Mode [1 for confirm, 2 for cancel]
 
 =end 
 	
@@ -150,6 +196,7 @@ class Api::V1::FollowRequestsController < ApiController
       end 	
 
 	end	
+
 
   def param_user_to_follow_id
 
