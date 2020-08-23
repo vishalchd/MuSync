@@ -199,9 +199,9 @@ class Constants
     REQUEST_PARAM_LATITUDE                   = "latitude"
     REQUEST_PARAM_LONGITUDE                  = "longitude"
 
-    REQUEST_PARAM_USEREMAIL                  = "email"
-    REQUEST_PARAM_USERNAME                   = "name"
-    REQUEST_PARAM_USERPASSWORD               = "password"
+    REQUEST_PARAM_USEREMAIL                  = "user_email"
+    REQUEST_PARAM_USERNAME                   = "user_name"
+    REQUEST_PARAM_USERPASSWORD               = "user_password"
     REQUEST_PARAM_CURRENT_PASSWORD           = "current_password"
     REQUEST_PARAM_USERPHOTO                  = "photo"
 
