@@ -6,7 +6,7 @@ class Api::V1::UserProfileController < ApiController
 =begin
     :: Expected Params ::
   
-  Constants::REQUEST_PARAM_MODE                 => Action Mode [1 for Name, 2 for photo, 3 for password]
+  Constants::REQUEST_PARAM_MODE                 => Action Mode [1 for Name, 2 for Email, 3 for photo, 4 for password]
   Constants::REQUEST_PARAM_USERPHOTO            => User Photo
   Constants::REQUEST_PARAM_USERPASSWORD         => Password  
   Constants::REQUEST_PARAM_CURRENT_PASSWORD     => Current Password
